@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#ljaldf",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,8 +65,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -140,8 +139,10 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "4b6b6f6d08c3fb12",
+  "active": "d4ac06b46253ff4d",
   "lastOpenFiles": [
+    "Pasted image 20221103181125.png",
+    "README.md",
     "git-notes/README.md",
     "2022-11-03.md",
     "学习笔记/go 语言/go语言数据.md",
