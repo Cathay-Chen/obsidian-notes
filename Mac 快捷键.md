@@ -1,0 +1,15 @@
+## mac 常用快捷键
+- ctltcmd+space 快速呼出 emo 表情
+- cmd+q 真正的退出软件
+- cmd+shift+3 截图全屏
+- cmd+shift+4 自行选择区域进行截图
+- cmd+shift+4+space 对应用进行截图
+- cmd+shift+ctl+3/4/6 截图井剪切
+- cmd+shift+6 对 touch bar 进行截图
+- cmd+z safria 浏览器恢复正在浏览的网站
+- shift+cmd+t 重新打开不小心关闭的浏览器
+- ctl+cmd+q 快速锁屏
+- 拖到桌面空白处可直接删除程序坞中应用
+- cmd+m 最小化窗口
+- 将最小化的窗口恢复回来的方法：按住 Cmd+ Tab 激活程序切换->按住 Cmd 不放按 Tab (Shift + Tab）选中程序一＞松开 Tab，按住 Cmd 不放的同时按住 Opt (alt)-＞松开 Cmd。
+- cmd+shift+5 录制视频
