@@ -47,4 +47,7 @@ use iam_analytics
 db.createUser({user:"${MONGO_USERNAME}",pwd:"${MONGO_PASSWORD}",roles:["dbOwner"]})  
 
 db.auth("${MONGO_USERNAME}", "${MONGO_PASSWORD}")
+
+## 查看所有用户
+show users
 ```
