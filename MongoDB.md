@@ -1,3 +1,4 @@
+#mongodb
 
 # #  MongoDB 中的一些符号
 | 符号 | 含义     |
@@ -33,7 +34,7 @@ db.createUser 用到了以下 3 个参数。
 
 因为 admin 用户具有 MongoDB 的 Root 权限，权限过大安全性会降低。为了提高安全性，我们还需要创建一个 iam 普通用户来连接和操作 MongoDB。
 
-```shell
+```MongoDB
 ## 创建管理员账户。
 use admin
 
