@@ -125,3 +125,29 @@ BREAKING CHANGE: <breaking change summary>
 // 空行
 Fixes #<issue number>
 ```
+
+接下来，我给你详细说明下这两种情况：
+
+不兼容的改动：如果当前代码跟上一个版本不兼容，需要在 Footer 部分，以 BREAKING CHANG: 开头，后面跟上不兼容改动的摘要。Footer 的其他部分需要说明变动的描述、变动的理由和迁移方法，例如：
+
+```
+BREAKING CHANGE: isolate scope bindings definition has changed and
+    the inject option for the directive controller injection was removed.
+
+    To migrate the code follow the example below:
+
+    Before:
+
+    scope: {
+      myAttr: 'attribute',
+    }
+
+    After:
+
+    scope: {
+      myAttr: '@',
+    }
+    The removed `inject` wasn't generaly useful for directives so there should be no code using it.
+```
+
+关闭的 Issue 列表：关闭的 Bug 需要在 Footer 部分新建一行，并以 Closes 开头列出，例如：Closes #123 。如果关闭了多个 Issue，可以这样列出：Closes #123, #432, #886 。例如:
