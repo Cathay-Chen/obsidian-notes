@@ -60,4 +60,19 @@ Successfully rebased and updated refs/heads/master.说明 rebase 成功，其实
 
 >注意：这里一定要传入想要变更 Commit Message 的父 commit ID：git rebase -i <父 commit ID>。
 
-1. 查看倒数第 3 次 commit 的 message 是否被更新。
+3. 查看倒数第 3 次 commit 的 message 是否被更新。
+
+```
+$ git log --oneline
+7157e9e docs(docs): append test line 'update3' to README.md
+5a26aa2 docs(docs): append test line 'update2' to README.md
+55892fa docs(docs): append test line 'update1' to README.md
+89651d4 docs(doc): add README.md
+```
+
+可以看到，倒数第 3 次 commit 的 message 成功被修改为期望的内容。
+
+这里有两点需要你注意：
+
+- Commit Message 是 commit 数据结构中的一个属性，如果 Commit Message 有变更，则 commit ID 一定会变，git commit --amend 只会变更最近一次的 commit ID，但是 git rebase -i 会变更父 commit ID 之后所有提交的 commit ID。
+- 如果当前分支有未 commit 的代码，需要先执行 git stash 将工作状态进行暂存，当修改完成后再执行 git stash pop 恢复之前的工作状态。
