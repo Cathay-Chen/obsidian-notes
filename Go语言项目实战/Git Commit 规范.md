@@ -198,8 +198,10 @@ git rebase 的最大作用是它可以重写历史。
 
 git rebase 支持的变更操作如下：
 
-| 命令      | 目的                            |
-| --------- | ------------------------------- |
-| p, pick   | 不对该 commit 做任何处理        |
-| r, reword | 保留该 commit，但是修改提交信息 |
-| e, edit   | 保留该 commit，但是 rebase 是                                |
+| 命令      | 目的                                                       |
+| --------- | ---------------------------------------------------------- |
+| p, pick   | 不对该 commit 做任何处理                                   |
+| r, reword | 保留该 commit，但是修改提交信息                            |
+| e, edit   | 保留该 commit，但是 rebase 时会暂停，允许你修改这个 commit |
+| s, squash | 保留该 commit，但是会将当前 commit 与上一个 commit 合并    |
+|           |                                                            |
