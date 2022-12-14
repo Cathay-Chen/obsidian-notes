@@ -23,4 +23,17 @@ $ git lfs install --skip-repo
 git commit --amend：修改最近一次 commit 的 message
 
 ## 修改某次 commit 的 message
-git rebase -i：修改某次 commit 的 message
+
+如果我们想修改的 Commit Message 不是最近一次的 Commit Message，可以通过 git rebase -i <父 commit ID>命令来修改。这个命令在实际开发中使用频率比较高，我们一定要掌握。具体来说，使用它主要分为 4 步。
+
+1. 查看当前分支的日志记录。
+	```
+	$ git log --oneline
+	1d6289f docs(docs): append test line 'update3' to README.md
+	a38f808 docs(docs): append test line 'update$i' to README.md
+	55892fa docs(docs): append test line 'update1' to README.md
+	89651d4 docs(doc): add README.md
+	```
+
+1. 修改倒数第 3 次提交 commit 的 message。
+2. 查看倒数第 3 次 commit 的 message 是否被更新。
