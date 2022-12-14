@@ -197,11 +197,22 @@ git rebase 的最大作用是它可以重写历史。
 这个交互界面会首先列出给定之前（不包括，越下面越新）的所有 commit，每个 commit 前面有一个操作命令，默认是 pick。我们可以选择不同的 commit，并修改 commit 前面的命令，来对该 commit 执行不同的变更操作。
 
 git rebase 支持的变更操作如下：
-
 | 命令      | 目的                                                       |
 | --------- | ---------------------------------------------------------- |
 | p, pick   | 不对该 commit 做任何处理                                   |
 | r, reword | 保留该 commit，但是修改提交信息                            |
 | e, edit   | 保留该 commit，但是 rebase 时会暂停，允许你修改这个 commit |
 | s, squash | 保留该 commit，但是会将当前 commit 与上一个 commit 合并    |
-|           |                                                            |
+| f, fixup  | 与 squash 相同，但不会保存当前 commit 的提交信息           |
+| x, exec   | 执行其他 shell 命令                                        |
+| d, drop   | 删除该 commit                                                           |
+
+在上面的 7 个命令中，squash 和 fixup 可以用来合并 commit。例如用 squash 来合并，我们只需要把要合并的 commit 前面的动词，改成 squash（或者 s）即可。你可以看看下面的示例：
+
+```
+pick 07c5abd Introduce OpenPGP and teach basic usage
+s de9b1eb Fix PostChecker::Post#urls
+s 3e7ee36 Hey kids, stop all the highlighting
+pick fa20af3 git interactive rebase, squash, amend
+```
+
