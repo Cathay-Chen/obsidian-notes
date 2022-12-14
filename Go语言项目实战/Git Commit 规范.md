@@ -47,4 +47,17 @@ Closes #392
 Breaks foo.bar api, foo.baz should be used instead
 ```
 
+接下来，我们详细看看 Angular 规范中 Commit Message 的三个部分。
+
+**Header**
+
+Header 部分只有一行，包括三个字段：type（必选）、scope（可选）和 subject（必选）。
+
+我们先来说 **type**，它用来说明 commit 的类型。为了方便记忆，我把这些类型做了归纳，它们主要可以归为 Development 和 Production 共两类。它们的含义是：
+
+- Development：这类修改一般是项目管理类的变更，不会影响最终用户和生产环境的代码，比如 CI 流程、构建方式等的修改。遇到这类修改，通常也意味着可以免测发布。
+- Production：这类修改会影响最终的用户和生产环境的代码。所以对于这种改动，我们一定要慎重，并在提交前做好充分的测试。
+ 
+我在这里列出了 Angular 规范中的常见 type 和它们所属的类别，你在提交 Commit Message 的时候，一定要注意区分它的类别。举个例子，我们在做 Code Review 时，如果遇到 Production 类型的代码，一定要认真 Review，因为这种类型，会影响到现网用户的使用和现网应用的功能。
+
 
