@@ -229,3 +229,27 @@ Fix PostChecker::Post#urls
 # This is the 3rdCommit Message:
 Hey kids, stop all the highlighting
 ```
+
+如果我们将第 3 行的 squash 命令改成 fixup 命令：
+
+```
+pick 07c5abd Introduce OpenPGP and teach basic usage
+s de9b1eb Fix PostChecker::Post#urls
+f 3e7ee36 Hey kids, stop all the highlighting
+pick fa20af3 git interactive rebase, squash, amend
+```
+
+rebase 后，还是会生成两个 commit，第 2 行和第 3 行的 commit，都合并到第 1 行的 commit。但是，新的提交信息里面，第 3 行 commit 的提交信息会被注释掉：
+
+```
+# This is a combination of 3 commits.
+# The first commit's message is:
+Introduce OpenPGP and teach basic usage
+
+# This is the 2ndCommit Message:
+Fix PostChecker::Post#urls
+
+# This is the 3rdCommit Message:
+# Hey kids, stop all the highlighting
+```
+
