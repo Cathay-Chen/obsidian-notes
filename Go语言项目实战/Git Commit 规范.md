@@ -193,3 +193,13 @@ git rebase 的最大作用是它可以重写历史。
 我们通常会通过 `git rebase -i <commit ID>` 使用 git rebase 命令，-i 参数表示交互（interactive），该命令会进入到一个交互界面中，其实就是 Vim 编辑器。在该界面中，我们可以对里面的 commit 做一些操作，交互界面如图所示：
 
 ![[Pasted image 20221214144415.png]]
+
+这个交互界面会首先列出给定之前（不包括，越下面越新）的所有 commit，每个 commit 前面有一个操作命令，默认是 pick。我们可以选择不同的 commit，并修改 commit 前面的命令，来对该 commit 执行不同的变更操作。
+
+git rebase 支持的变更操作如下：
+
+| 命令      | 目的                            |
+| --------- | ------------------------------- |
+| p, pick   | 不对该 commit 做任何处理        |
+| r, reword | 保留该 commit，但是修改提交信息 |
+| e, edit   | 保留该 commit，但是 rebase 是                                |
