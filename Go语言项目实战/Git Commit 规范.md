@@ -27,3 +27,24 @@ Angular 规范其实是一种语义化的提交规范（Semantic Commit Messages
 [optional footer(s)]
 ```
 
+其中，Header 是必需的，Body 和 Footer 可以省略。在以上规范中，`<scope>` 必须用括号 () 括起来， `<type>[scope]` 后必须紧跟冒号，冒号后必须紧跟空格，2 个空行也是必需的。
+
+示例：
+
+```shell
+fix($compile): couple of unit tests for IE9
+# Please enter the Commit Message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+# ...
+
+Older IEs serialize html uppercased, but IE9 does not...
+Would be better to expect case insensitive, unfortunately jasmine does
+not allow to user regexps for throw expectations.
+
+Closes #392
+Breaks foo.bar api, foo.baz should be used instead
+```
+
+
