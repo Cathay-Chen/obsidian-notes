@@ -10,6 +10,8 @@
 
 ##  Angular 规范
 
+### 简介
+
 Angular 规范其实是一种语义化的提交规范（Semantic Commit Messages），所谓语义化的提交规范包含以下内容：
 
 - Commit Message 是语义化的：Commit Message 都会被归为一个有意义的类型，用来说明本次 commit 的类型。
@@ -49,10 +51,11 @@ Breaks foo.bar api, foo.baz should be used instead
 
 接下来，我们详细看看 Angular 规范中 Commit Message 的三个部分。
 
-**Header**
+### Header
 
 Header 部分只有一行，包括三个字段：type（必选）、scope（可选）和 subject（必选）。
 
+#### type
 我们先来说 **type**，它用来说明 commit 的类型。为了方便记忆，我把这些类型做了归纳，它们主要可以归为 Development 和 Production 共两类。它们的含义是：
 
 - Development：这类修改一般是项目管理类的变更，不会影响最终用户和生产环境的代码，比如 CI 流程、构建方式等的修改。遇到这类修改，通常也意味着可以免测发布。
@@ -80,6 +83,11 @@ Header 部分只有一行，包括三个字段：type（必选）、scope（可�
 
 如果我们变更了非应用代码，例如更改了文档，那它属于非代码类。在非代码类中，有 3 种具有明确变更意图的类型：test、ci、docs；如果我们的非代码变更不属于这 3 类，那就全部归入到 chore 类。
 
-Angular 的 Commit Message 规范提供了大部分的 type，在实际开发中，我们可以使用部分 type，或者扩展添加我们自己的 type。但无论选择哪种方式，我们一定要保证一个项目中的 type 类型一致。
+Angular 的 Commit Message 规范提供了大部分的 type，在实际开发中，我们可以使用部分 type，或者扩展添加我们自己的 type。**但无论选择哪种方式，我们一定要保证一个项目中的 type 类型一致。**
 
+#### scope
+接下来，我们说说 Header 的第二个字段 **scope**。
 
+scope 是用来说明 commit 的影响范围的，它必须是名词。显然，不同项目会有不同的 scope。在项目初期，我们可以设置一些粒度比较大的 scope，比如可以按组件名或者功能来设置 scope；后续，如果项目有变动或者有新功能，我们可以再用追加的方式添加新的 scope。
+
+这里想强调的是，scope 不适合设置太具体的值。太具体的话，一方面会导致项目有太多的 scope，难以维护。另一方面，开发者也难以确定 commit 属于哪个具体的 scope，导致错放 scope，反而会使 scope 失去了分类的意义。
