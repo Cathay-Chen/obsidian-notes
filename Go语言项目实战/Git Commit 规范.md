@@ -253,3 +253,11 @@ Fix PostChecker::Post#urls
 # Hey kids, stop all the highlighting
 ```
 
+除此之外，我们在使用 git rebase 进行操作的时候，还需要注意以下几点：
+- 删除某个 commit 行，则该 commit 会丢失掉。
+- 删除所有的 commit 行，则 rebase 会被终止掉。
+- 可以对 commits 进行排序，git 会从上到下进行合并。
+
+
+---
+[[Git]] 这里有修改 commit 的内容
