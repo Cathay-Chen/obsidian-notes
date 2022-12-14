@@ -20,7 +20,7 @@ $ git lfs install --skip-repo
 ```
 
 ## 修改最近一次 commit 的 message
-
 git commit --amend：修改最近一次 commit 的 message
 
-
+## 修改某次 commit 的 message
+git rebase -i：修改某次 commit 的 message
