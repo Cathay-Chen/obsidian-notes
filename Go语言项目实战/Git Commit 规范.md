@@ -180,5 +180,16 @@ This reverts commit 079360c7cfc830ea8a6e13f4c8b8114febc9b48a.
 
 **按照上面 2 种方式提交代码，你可能会觉得代码 commit 比较多，看起来比较随意。或者说，我们想等开发完一个完整的功能之后，放在一个 commit 中一起提交。这时候，我们可以在最后合并代码或者提交 Pull Request 前，执行 git rebase -i 合并之前的所有 commit。**
 
-#### 合并提交
+### 合并提交
 
+合并提交，就是将多个 commit 合并为一个 commit 提交。这里，我建议你把新的 commit 合并到主干时，只保留 2~3 个 commit 记录。那具体怎么做呢？
+
+在 Git 中，我们主要使用 git rebase 命令来合并。git rebase 也是我们日后开发需要经常使用的一个命令，所以我们一定要掌握好它的使用方法。
+
+#### git rebase 命令介绍
+
+git rebase 的最大作用是它可以重写历史。
+
+我们通常会通过 `git rebase -i <commit ID>` 使用 git rebase 命令，-i 参数表示交互（interactive），该命令会进入到一个交互界面中，其实就是 Vim 编辑器。在该界面中，我们可以对里面的 commit 做一些操作，交互界面如图所示：
+
+![[Pasted image 20221214144415.png]]
