@@ -70,8 +70,16 @@ Header 部分只有一行，包括三个字段：type（必选）、scope（可�
 | test     | Development | 新增测试用例或是更新现有测试用例                                                                      |
 | ci       | Development | 持续集成和部署相关的改动，比如修改 Jenkins、Gitlab CI 等 CI 配置文件或者更新 systemd unit 文件        |
 | docs     | Development | 文档类更新，包括修改用户文档或者开发文档等                                                            |
-| chore    | Development |                                                                                                       |
+| chore    | Development | 其他类型，比如构建流程、依赖管理或者辅助工具的变动等                                                                                                      |
 
+有这么多 type，我们该如何确定一个 commit 所属的 type 呢？这里我们可以通过下面这张图来确定。
 
+![[Pasted image 20221214112951.png]]
+
+如果我们变更了应用代码，比如某个 Go 函数代码，那这次修改属于代码类。在代码类中，有 4 种具有明确变更意图的类型：feat、fix、perf 和 style；如果我们的代码变更不属于这 4 类，那就全都归为 refactor 类，也就是优化代码。
+
+如果我们变更了非应用代码，例如更改了文档，那它属于非代码类。在非代码类中，有 3 种具有明确变更意图的类型：test、ci、docs；如果我们的非代码变更不属于这 3 类，那就全部归入到 chore 类。
+
+Angular 的 Commit Message 规范提供了大部分的 type，在实际开发中，我们可以使用部分 type，或者扩展添加我们自己的 type。但无论选择哪种方式，我们一定要保证一个项目中的 type 类型一致。
 
 
