@@ -172,4 +172,5 @@ This reverts commit 079360c7cfc830ea8a6e13f4c8b8114febc9b48a.
 
 但是除了 Commit Message 规范之外，在代码提交时，我们还需要关注 3 个重点内容：提交频率、合并提交和 Commit Message 修改。
 
-## 
+## Commit 相关的 3 个重要内容
+
