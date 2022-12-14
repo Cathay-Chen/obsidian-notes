@@ -261,26 +261,3 @@ Fix PostChecker::Post#urls
 
 ---
 [[Git]] 这里有修改 commit 的内容
-
-
-  
-
-localhost/vip-sale/p/		http://106.15.199.220:888/phpmyadmin_26fa273af50269ec/index.php?route=/table/sql&db=vip-sale&table=p
-
-   正在显示第 0 -  9 行 (共 10 行, 查询花费 0.0185 秒。)
-
-
-SELECT p.name, sum(o.num) FROM fa_vip_order o left JOIN fa_vip_product p on o.product_id = p.id where p.brand_id = 2 GROUP by o.product_id;
-
-
-name	sum(o.num)	
-稻壳月卡(31天)	449	
-稻壳季卡(93天)	197	
-稻壳年卡(372天)	100	
-WPS会员月卡(31天)	6932	
-WPS会员年卡(372天)	388	
-WPS会员两年卡(744天)	61	
-超级会员月卡(31天)	1582	
-超级会员季卡(93天)	69	
-超级会员年卡(372天)	184	
-超级会员两年卡(744天)	20	
