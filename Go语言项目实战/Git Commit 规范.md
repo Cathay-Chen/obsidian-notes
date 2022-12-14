@@ -216,3 +216,16 @@ s 3e7ee36 Hey kids, stop all the highlighting
 pick fa20af3 git interactive rebase, squash, amend
 ```
 
+rebase 后，第 2 行和第 3 行的 commit 都会合并到第 1 行的 commit。这个时候，我们提交的信息会同时包含这三个 commit 的提交信息：
+
+```
+# This is a combination of 3 commits.
+# The first commit's message is:
+Introduce OpenPGP and teach basic usage
+
+# This is the 2ndCommit Message:
+Fix PostChecker::Post#urls
+
+# This is the 3rdCommit Message:
+Hey kids, stop all the highlighting
+```
