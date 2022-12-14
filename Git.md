@@ -19,3 +19,8 @@ GitHub 限制最大只能克隆 100M 的单个文件，为了能够克隆大于 
 $ git lfs install --skip-repo
 ```
 
+## 修改最近一次 commit 的 message
+
+git commit --amend：修改最近一次 commit 的 message
+
+
