@@ -76,3 +76,17 @@ $ git log --oneline
 
 - Commit Message 是 commit 数据结构中的一个属性，如果 Commit Message 有变更，则 commit ID 一定会变，git commit --amend 只会变更最近一次的 commit ID，但是 git rebase -i 会变更父 commit ID 之后所有提交的 commit ID。
 - 如果当前分支有未 commit 的代码，需要先执行 git stash 将工作状态进行暂存，当修改完成后再执行 git stash pop 恢复之前的工作状态。
+
+## 放弃本地修改内容
+
+```shell
+# 如果有的修改以及加入暂存区的话 
+$ git reset --hard 
+# 还原所有修改，不会删除新增的文件 
+$ git checkout . 
+# 下面命令会删除新增的文件 
+$ git clean -xdf
+```
+
+
+
