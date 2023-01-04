@@ -131,26 +131,66 @@ func main() {
 
 读写锁 (`sync.RWMutex`)：
 
-```
+```go
+import "sync"
+
+var rwMu sync.RWMutex
+
+func main() {
+    rwMu.RLock()
+    // 在这里进行只读操作
+    rwMu.RUnlock()
+
+    rwMu.Lock()
+    // 在这里进行写操作
+    rwMu.Unlock()
+}
 
 ```
 
 原子操作 (`sync/atomic`)：
 
-Copy code
+```go
+import "sync/atomic"
 
-`import "sync/atomic"  var count int64  func main() {     atomic.AddInt64(&count, 1)     atomic.LoadInt64(&count)     atomic.StoreInt64(&count, 10)     atomic.SwapInt64(&count, 20) }`
+var count int64
+
+func main() {
+    atomic.AddInt64(&count, 1)
+    atomic.LoadInt64(&count)
+    atomic.StoreInt64(&count, 10)
+    atomic.SwapInt64(&count, 20)
+}
+
+```
 
 自旋锁 (`sync.SpinLock`)：
 
-Copy code
+```go
+import "sync"
 
-`import "sync"  var spinLock sync.SpinLock  func main() {     spinLock.Lock()     // 在这里进行需要保护的操作     spinLock.Unlock() }`
+var spinLock sync.SpinLock
+
+func main() {
+    spinLock.Lock()
+    // 在这里进行需要保护的操作
+    spinLock.Unlock()
+}
+
+```
 
 递归锁 (`sync.Mutex` 的 `Lock()` 和 `Unlock()` 函数支持递归调用)：
 
-Copy code
+```go
+import "sync"
 
-`import "sync"  var mu sync.Mutex  func main() {     mu.Lock()     // 在这里进行需要保护的操作     mu.Unlock() }`
+var mu sync.Mutex
+
+func main() {
+    mu.Lock()
+    // 在这里进行需要保护的操作
+    mu.Unlock()
+}
+```
 
 注意：在使用锁的时候，一定要保证在调用 `Unlock()` 函数之前必须先调用 `Lock()` 函数。否则会导致程序异常。
