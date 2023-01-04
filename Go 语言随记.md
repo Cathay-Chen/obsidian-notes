@@ -112,3 +112,45 @@ Go 语言提供了若干种锁机制来帮助程序员控制并发：
 
 在选择锁的时候，需要根据具体情况进行选择。通常来说，如果代码中有大量的读操作，可以使用读写锁 (`sync.RWMutex`)，否则可以使用互斥锁 (`sync.Mutex`)。
 
+下面是 Go 语言中几种常用锁的用法示例：
+
+互斥锁 (`sync.Mutex`)：
+
+```go
+import "sync"
+
+var mu sync.Mutex
+
+func main() {
+    mu.Lock()
+    // 在这里进行需要保护的操作
+    mu.Unlock()
+}
+
+```
+
+读写锁 (`sync.RWMutex`)：
+
+```
+
+```
+
+原子操作 (`sync/atomic`)：
+
+Copy code
+
+`import "sync/atomic"  var count int64  func main() {     atomic.AddInt64(&count, 1)     atomic.LoadInt64(&count)     atomic.StoreInt64(&count, 10)     atomic.SwapInt64(&count, 20) }`
+
+自旋锁 (`sync.SpinLock`)：
+
+Copy code
+
+`import "sync"  var spinLock sync.SpinLock  func main() {     spinLock.Lock()     // 在这里进行需要保护的操作     spinLock.Unlock() }`
+
+递归锁 (`sync.Mutex` 的 `Lock()` 和 `Unlock()` 函数支持递归调用)：
+
+Copy code
+
+`import "sync"  var mu sync.Mutex  func main() {     mu.Lock()     // 在这里进行需要保护的操作     mu.Unlock() }`
+
+注意：在使用锁的时候，一定要保证在调用 `Unlock()` 函数之前必须先调用 `Lock()` 函数。否则会导致程序异常。
