@@ -37,6 +37,7 @@ func main() {
 ```
 
 除此之外，Go 语言用于异常恢复的内置 recover 函数，也需要与 defer 函数结合使用才有意义：
+
 ```go
 func f() {
     defer func() {
