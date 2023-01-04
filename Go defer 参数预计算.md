@@ -2,17 +2,28 @@
 
 例如，在下面的代码中，我们使用 `defer` 关键字延迟调用 `fmt.Println` 函数：
 
-Copy code
+```go
+package main
 
-`package main  import "fmt"  func main() {     i := 1     defer fmt.Println(i)     i++     fmt.Println("Hello, world!") }`
+import "fmt"
+
+func main() {
+    i := 1
+    defer fmt.Println(i)
+    i++
+    fmt.Println("Hello, world!")
+}
+
+```
 
 在这段代码中，变量 `i` 的值是 1，但是因为 `defer` 语句在函数返回之前倒序执行，所以 `fmt.Println(i)` 会在最后输出，输出的值是 2。
 
 所以，输出的结果是：
 
-Copy code
-
-`Hello, world! 2`
+```
+Hello, world!
+2
+```
 
 注意，如果 `defer` 语句中的函数需要传入参数，那么这些参数会在 `defer` 语句执行时进行预计算，而不是在延迟执行函数时计算。
 
