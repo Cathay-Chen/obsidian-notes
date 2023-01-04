@@ -15,7 +15,9 @@ brew upgrade go
 ```
 
 ---
- [base64 编解码](http://zh.wikipedia.org/wiki/Base64)
+## base64
+
+ [base64 编解码](http://zh.wikipedia.org/wiki/Base64)
 ```go
 data := "abc123!?$*&()'-=@~"
 
@@ -58,7 +60,8 @@ fmt.Println(url.PathEscape(path))
 
 ---
 
-简单的 Http 服务代码
+## 简单的 Http 服务代码
+
 ```go
 func startHttp(port int) {  
    port1 := strconv.Itoa(port)  
@@ -91,3 +94,21 @@ func startHttp(port int) {
    }  
 }
 ```
+
+
+## GO 语言中的锁
+
+Go 语言提供了若干种锁机制来帮助程序员控制并发：
+
+-   互斥锁 (`sync.Mutex`)
+-   读写锁 (`sync.RWMutex`)
+-   原子操作 (`sync/atomic` 包)
+-   自旋锁 (`sync.SpinLock`)
+-   递归锁 (`sync.Mutex` 的 `Lock()` 和 `Unlock()` 函数支持递归调用)
+
+简单来说，互斥锁 (`sync.Mutex`) 和读写锁 (`sync.RWMutex`) 适用于需要完全排他性的场合，而原子操作 (`sync/atomic`) 则更适用于只需要短暂排他性的场合。自旋锁 (`sync.SpinLock`) 适用于排他性不需要太久，但又不能使用原子操作的场合。
+
+注意：原子操作可以避免阻塞，但在多处理器系统上会使得其它的处理器被挂起，因此只适用于需要短暂排他性的场合。
+
+在选择锁的时候，需要根据具体情况进行选择。通常来说，如果代码中有大量的读操作，可以使用读写锁 (`sync.RWMutex`)，否则可以使用互斥锁 (`sync.Mutex`)。
+
