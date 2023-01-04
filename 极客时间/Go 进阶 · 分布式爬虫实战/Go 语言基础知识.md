@@ -29,8 +29,7 @@ func main() {
 	defer fmt.Println("Deferred 1")
 	defer fmt.Println("Deferred 2")
 	fmt.Println("End")
-
-
+	
 	// 输出结果为：
 	// Start End Deferred 2 Deferred 1
 }
@@ -40,14 +39,19 @@ func main() {
 
 ```go
 func f() {
-    defer func() {
-        if r := recover(); r != nil {
-            fmt.Println("Recovered in f", r)
-        }
-    }()
-    fmt.Println("Calling g.")
-    g(0)
-    fmt.Println("Returned normally from g.")
+    defer func() {  
+	   if r := recover(); r != nil {  
+	      fmt.Println("Recovered in f", r)  
+	   }  
+	}()  
+	fmt.Println("Calling g.")  
+	panic("panic err")  
+	fmt.Println("Returned normally from g.")
+
+	// 输出结果为：
+	// Calling g.
+	// Recovered in f panic err
+
 }
 ```
 
