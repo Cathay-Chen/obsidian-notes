@@ -193,6 +193,17 @@ for i, v := range evenVals {
 
 ### 函数
 
+#### 基础函数声明
+
+```go
+func name(parameter-list) (result-list) {
+    body
+}
+```
+
+
+
+
 ### 复合类型
 
 
