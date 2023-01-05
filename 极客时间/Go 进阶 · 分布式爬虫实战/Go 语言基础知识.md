@@ -281,7 +281,7 @@ f()
 defer 是 Go 语言中的关键字，也是 Go 语言的重要特性之一，defer 在资源释放、panic 捕获等场景中的应用非常广泛。
 
 ```go
-defer func(...){
+defer func(...) {
 	// 实际处理
 }()
 ```
