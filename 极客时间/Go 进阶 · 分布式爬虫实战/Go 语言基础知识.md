@@ -304,7 +304,43 @@ numbers3 :=numbers[3:]
 ```
 
 #### Map 哈希表
+
+- 声明与初始化
+
+```go
+var hash map[T]T
+var hash = make(map[T]T, NUMBER)
+var country = map[string]string{
+	"China": "Beijing",
+	"Japan": "Tokyo",
+	"India": "New Delhi",
+	"France": "Paris",
+	"Italy": "Rome",
+}
+```
+
+- 俩种访问方式
+
+```go
+v := hash[key]
+v,ok := hash[key]
+```
+
+- 赋值与删除
+
+```go
+m := map[string]int{
+    "hello": 5,
+    "world": 10,
+}
+delete(m, "hello")
+```
+
+
 #### 结构体
+
+
+
 
 
 ## 语法特性
