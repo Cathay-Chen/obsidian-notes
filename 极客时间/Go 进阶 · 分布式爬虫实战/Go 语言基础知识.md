@@ -339,9 +339,50 @@ delete(m, "hello")
 
 #### 结构体
 
+- 声明与赋值
+
+```go
+type Nat struct {
+    n  int
+    d  int
+}
+var nat Nat
+nat := Nat{
+    2,
+    3
+}
+nat.n = 4
+natq := Nat{
+    d:  3,
+    n:  2,
+}
+```
+
+- 匿名结构体
+
+```go
+var person struct {
+    name string
+    age  int
+    pet  string
+}
+
+pet := struct {
+    name string
+    kind string
+}{
+    name: "Fido",
+    kind: "dog",
+}
+```
 
 
 
+### 变量的可比较性
+
+| 类型 | 可比较 | 说明 |
+| ---- | ------ | ---- |
+| 布尔 | 可比较 |      |
 
 ## 语法特性
 
