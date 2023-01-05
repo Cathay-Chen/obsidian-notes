@@ -28,16 +28,18 @@ Go 中要掌握的基础语法和其他的高级语言是类似的。它包括�
 
 ### 变量与类型
 
-### 变量的声明与赋值。
+#### 变量的声明与赋值
+
+示例：
 
 ```go
-  // Declare a variable with the var keyword and specify a type
+  // 使用var关键字声明变量并指定类型
   var x int
   
-  // Assign a value to the variable
+  // 为变量赋值
   x = 5
   
-  // You can also declare and assign a value at the same time
+  // 您还可以同时声明和赋值
   var y float32 = 7.5
   
   // Go will infer the type of the variable if it is not specified
@@ -78,10 +80,28 @@ var break string     // 不能使用 Go 保留字
 
 #### 变量的生命周期
 
+变量的生命周期可以通过变量的作用域来确定。在 Go 语言中，变量的作用域可以是包级别的（package-level）或者是函数内部的（function-level）。
+
+包级别的变量在整个包中都是可见的，函数内部的变量仅在函数内部是可见的。变量的生命周期是指变量存在的时间段。包级别的变量的生命周期是整个程序的生命周期，函数内部的变量的生命周期是在函数被调用时开始，在函数执行完毕后结束。
+
+例如：
+
+在下面的示例中，`packageLevelVariable` 的生命周期是整个程序的生命周期，而 `functionLevelVariable` 的生命周期只在 `main` 函数被调用时存在。
+
+```go
+// 包级别的变量
+var packageLevelVariable int
+
+func main() {
+    // 函数内部的变量
+    var functionLevelVariable int
+}
+```
 
 
 #### 变量的作用域
 
+Go 的词法范围使用花括号{…}作为分割。根据作用域的范围大小，可以分为全局作用域、包作用域、文件作用域、函数作用域。
 
 
 
