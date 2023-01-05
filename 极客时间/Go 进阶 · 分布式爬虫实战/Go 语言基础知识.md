@@ -28,8 +28,32 @@ Go 中要掌握的基础语法和其他的高级语言是类似的。它包括�
 
 ### 变量与类型
 
+需要掌握的内容如下：
+
+- 变量的声明与赋值。
+
+```go
+  // Declare a variable with the var keyword and specify a type
+  var x int
+  
+  // Assign a value to the variable
+  x = 5
+  
+  // You can also declare and assign a value at the same time
+  var y float32 = 7.5
+  
+  // Go will infer the type of the variable if it is not specified
+  z := "hello"
+}
+
+```
 
 
+- Go 中的内置类型。
+
+
+
+- 
 
 
 
