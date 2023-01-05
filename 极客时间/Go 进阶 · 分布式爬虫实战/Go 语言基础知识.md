@@ -139,7 +139,58 @@ if condition {
 }
 ```
 
-#### Swi
+#### switch 语句
+
+```go
+switch var1 {
+    case val1:
+        //...
+    case val2, val3:
+        //...
+    default:
+        //...
+}
+```
+
+#### for 循环语句
+
+1. 完整的 C 风格的 for 循环
+
+```go
+for i := 0; i < 10; i++ {
+    fmt.Println(i)
+}
+```
+
+2. 只有条件判断的 for 循环
+
+```go
+i := 1
+for i < 100 {
+        fmt.Println(i)
+        i = i * 2
+}
+```
+
+3. 无限循环的 for 循环
+
+```go
+func main() {
+    for {
+        fmt.Println("Hello")
+    }
+}
+```
+
+4. for-range 循环
+
+```go
+evenVals := []int{2, 4, 6, 8, 10, 12}
+for i, v := range evenVals {
+    fmt.Println(i, v)
+}
+```
+
 
 ### 函数
 ### 复合类型
