@@ -1,11 +1,4 @@
 
-系统环境变量设置:
-
-```basic
-1 新建MYSQL_HOME->C:\Program Files\MySQL\MySQL Server 5.7
-2 Path编辑->后面增加%MYSQL_HOME%\bin
-```
-
 登陆时输入`mysql -u root -p`(不输入密码)，回车输入密码即可进入数据库。
 
 ## 一 、常用操作数据库的命令
