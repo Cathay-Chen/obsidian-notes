@@ -243,10 +243,30 @@ func main() {
 
 - 函数作为返回值时，一般在闭包和构建功能中间件时使用得比较多，在不修改过去核心代码的基础上，用比较小的代价增加了新的功能。
 
+```go
+func logging(f http.HandlerFunc) http.HandlerFunc{
+  return func(w http.ResponseWriter, r *http.Request) {
+    log.Println(r.URL.Path)
+    f(w,r)
+  }
+}
+```
 
+- 函数作为值时，可以用来提升服务的扩展性
 
+```go
+var opMap = map[string]func(int, int) int{
+    "+": add,
+    "-": sub,
+    "*": mul,
+    "/": div,
+}
 
+f := opMap[op]
+f()
+```
 
+> 注意，Go 函数调用时参数是值传递，在调用过程中修改函数参数不会影响到原始的值。
 
 ### 复合类型
 
