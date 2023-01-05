@@ -473,7 +473,44 @@ s.area()
 ```
 
 - 接口的嵌套
-- 
+
+```go
+type ReadWriter interface {
+  Reader
+  Writer
+}
+
+type Reader interface {
+  Read(p []byte) (n int, err error)
+}
+
+type Writer interface {
+  Write(p []byte) (n int, err error)
+}
+```
+
+- 接口类型断言
+
+```go
+func main(){
+  var s Shape
+  s = Rectangle{3, 4}
+  rect := s.(Rectangle)
+  fmt.Printf("长方形周长:%v, 面积:%v \\n",rect.perimeter(),rect.area())
+}
+```
+
+- 根据空接口中动态类型的差异选择不同的处理方式（这在参数为空接口函数的内部处理中使用广泛，例如 fmt 库、JSON 库）
+
+```go
+switch f := arg.(type) {
+  case bool:
+    p.fmtBool(f, verb)
+  case float32:
+    p.fmtFloat(float64(f), 32, verb)
+  case float64:
+    p.fmtFloat(f, 64, verb)
+```
 
 
 ### 协程
