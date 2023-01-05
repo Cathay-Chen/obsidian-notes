@@ -219,6 +219,32 @@ func Println(a ...interface{}) (n int, err error)
 
 #### 函数作为一等公民拥有一些灵活的特性
 
+- 函数作为参数时，可以提升程序的扩展性
+
+```go
+package main
+import (
+    "fmt"
+)
+// 遍历切片的每个元素, 通过给定函数进行元素访问
+func visit(list []int, f func(int)) {
+    for _, v := range list {
+        f(v)
+    }
+}
+
+func main() {
+    // 使用匿名函数打印切片内容
+    visit([]int{1, 2, 3, 4}, func(v int) {
+        fmt.Println(v)
+    })
+}
+```
+
+- 函数作为返回值时，一般在闭包和构建功能中间件时使用得比较多，在不修改过去核心代码的基础上，用比较小的代价增加了新的功能。
+
+
+
 
 
 
