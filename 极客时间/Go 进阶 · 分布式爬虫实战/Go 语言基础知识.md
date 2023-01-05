@@ -191,10 +191,8 @@ for i, v := range evenVals {
 
 
 ### 函数
-
 #### 基本用法
-
-#### 基础函数声明
+- 基础函数声明
 
 ```go
 func name(parameter-list) (result-list) {
@@ -202,7 +200,7 @@ func name(parameter-list) (result-list) {
 }
 ```
 
-#### 函数的多返回值特性 ：
+- 函数的多返回值特性 ：
 
 ```go
 func div (a, b int) (int, error) {
@@ -213,11 +211,13 @@ func div (a, b int) (int, error) {
 }
 ```
 
-#### 可变参数函数
+- 可变参数函数
 
 ```go
 func Println(a ...interface{}) (n int, err error)
 ```
+
+#### 函数作为一等公民拥有一些灵活的特性
 
 
 
