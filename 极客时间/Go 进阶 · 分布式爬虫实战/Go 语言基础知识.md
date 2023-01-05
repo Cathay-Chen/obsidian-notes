@@ -437,6 +437,42 @@ func f() {
 ### 接口
 
 - 声明和定义
+
+```go
+type Shape interface {
+  perimeter() float64
+  area() float64
+}
+
+var s Shape
+```
+
+- 隐式地让一个类型实现接口
+
+```go
+type Rectangle struct {
+  a, b float64
+}
+
+func (r Rectangle) perimeter() float64 {
+  return (r.a + r.b) * 2
+}
+
+func (r Rectangle) area() float64 {
+  return r.a * r.b
+}
+```
+
+- 接口的动态调用方式
+
+```go
+var s Shape
+s = Rectangle{3, 4}
+s.perimeter()
+s.area()
+```
+
+- 接口的嵌套
 - 
 
 
