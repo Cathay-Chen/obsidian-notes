@@ -27,7 +27,6 @@
 Go 中要掌握的基础语法和其他的高级语言是类似的。它包括了变量与类型、表达式与运算符、基本控制结构、函数和复合类型。
 
 ### 变量与类型
-
 #### 变量的声明与赋值
 
 示例：
@@ -193,12 +192,31 @@ for i, v := range evenVals {
 
 ### 函数
 
+#### 基本用法
+
 #### 基础函数声明
 
 ```go
 func name(parameter-list) (result-list) {
     body
 }
+```
+
+#### 函数的多返回值特性 ：
+
+```go
+func div (a, b int) (int, error) {
+    if b == 0 {
+	    return 0, errors.New("b cat't be 0")
+    }
+    return a/b,nil
+}
+```
+
+#### 可变参数函数
+
+```go
+func Println(a ...interface{}) (n int, err error)
 ```
 
 
