@@ -12,28 +12,9 @@ defer func(...){
 ```
 
 我们需要掌握 defer 的几个重要特性，包括：
-#todo
 - 延迟执行；
-- [[Go defer 参数预计算|参数预计算]]；
+- [[Go defer#^8e661a|参数预计算]]；
 - LIFO（后进先出）执行顺序。
-
-Go语言的defer关键字的执行顺序是LIFO（后进先出）。下面是一个示例：
-
-```go
-package main
-
-import "fmt"
-
-func main() {
-	fmt.Println("Start")
-	defer fmt.Println("Deferred 1")
-	defer fmt.Println("Deferred 2")
-	fmt.Println("End")
-	
-	// 输出结果为：
-	// Start End Deferred 2 Deferred 1
-}
-```
 
 除此之外，Go 语言用于异常恢复的内置 recover 函数，也需要与 defer 函数结合使用才有意义：
 
