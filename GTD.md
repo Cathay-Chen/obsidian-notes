@@ -7,6 +7,10 @@
 			- 收集（collect）
 				- 捕获（Capture）
 			- 整理（Process）
+				- 明晰（Clarify）
 			- 组织（Organize）
+				- 组织（Organize）
 			- 计划（Plan）
+				- 回顾（Reflect）
 			- 执行（Do）
+				- 执行（Engage）
