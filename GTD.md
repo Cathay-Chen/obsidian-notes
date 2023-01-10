@@ -51,9 +51,9 @@
 分区
 - 收集箱（Inbox）
 - 可能清单（Someday/maybe）
-- 项目清单
-- 等待清单
-- 执行清单
-- 参考资料
-- 回收箱
+- 项目清单（Plan Project）
+- 等待清单（Waiting for task）
+- 执行清单（Context task）
+- 参考资料（Reference）
+- 回收箱（Trash）
 - 日历/应用
