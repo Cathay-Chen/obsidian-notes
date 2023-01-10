@@ -14,3 +14,7 @@
 				- 回顾（Reflect）
 			- 执行（Do）
 				- 执行（Engage）
+
+
+- 如何处理收集箱（Inbox）
+	- 
