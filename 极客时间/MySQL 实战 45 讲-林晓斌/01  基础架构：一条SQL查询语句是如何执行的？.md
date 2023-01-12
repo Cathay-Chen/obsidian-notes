@@ -28,4 +28,8 @@ mysql -h$ip -P$port -u$user -p
 
 ![[Pasted image 20230112224425.png]]
 
-可以使用 `wait_timeout` 参数控制连接器闲置自动断开时间。默认是 8 小时。
+可以使用 `wait_timeout` 参数控制连接器闲置自动断开时间。默认是 8 小时。修改方法如下：
+
+```msyql
+
+```
