@@ -18,7 +18,7 @@ MySQL 可以分为 Server 层和存储引擎层两部分。
 
 连接器负责跟客户端建立连接、获取权限、维持和管理连接。连接命令一般是这么写的：
 
-```shell
+```bash
 mysql -h$ip -P$port -u$user -p
 ```
 
@@ -30,6 +30,21 @@ mysql -h$ip -P$port -u$user -p
 
 可以使用 `wait_timeout` 参数控制连接器闲置自动断开时间。默认是 8 小时。修改方法如下：
 
-```msyql
+```bash
+mysql> set global wait_timeout = 280000;
+Query OK, 0 rows affected (0.00 sec)
 
+mysql>
+```
+
+如果想让MySQL无论从哪种客户端都能让 `wait_timeout` 一致，那就要同时设置 `global wait_timeout` 和 `global interactive_timeout`了。例如:
+
+```bash
+mysql> set global wait_timeout = 280000;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> set global interactive_timeout = 280000;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
 ```
