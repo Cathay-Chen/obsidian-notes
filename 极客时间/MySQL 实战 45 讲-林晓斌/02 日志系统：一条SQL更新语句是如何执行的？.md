@@ -20,7 +20,7 @@
 有了 redo log，InnoDB 就可以保证即使数据库发生异常重启，之前提交的记录都不会丢
 失，这个能力称为 **crash-safe**。
 
-redo log 用于保证 crash-safe 能力。**innodb_flush_log_at_trx_commit 这个参数设置成 1 的时候，表示每次事务的 redo log 都直接持久化到磁盘。**这个参数我建议你设置成 1，这样可以保证 MySQL 异常重启之后数据不丢失。
+redo log 用于保证 crash-safe 能力。**innodb_flush_log_at_trx_commit 这个参数设置成 1 的时候，表示每次事务的 redo log 都直接持久化到磁盘。** 这个参数我建议你设置成 1，这样可以保证 MySQL 异常重启之后数据不丢失。
 
 > 这个模块只有 InnoDB 引擎才有。
 
@@ -32,8 +32,7 @@ binlog 会记录所有的逻辑操作，并且是采用“追加写”的形式�
 
 Binlog 有两种模式，statement 格式的话是记 sql 语句， row 格式会记录行的内容，记两条，更新前和更新后都有。
 
-sync_binlog 这个参数设置成 1 的时候，表示每次事务的 binlog 都持久化到磁盘。这个参
-数我也建议你设置成 1，这样可以保证 MySQL 异常重启之后 binlog 不丢失。
+**sync_binlog 这个参数设置成 1 的时候，表示每次事务的 binlog 都持久化到磁盘。** 这个参数我也建议你设置成 1，这样可以保证 MySQL 异常重启之后 binlog 不丢失。
 
 **2 种日志的对比：**
 
