@@ -19,6 +19,19 @@ GitHub 限制最大只能克隆 100M 的单个文件，为了能够克隆大于 
 $ git lfs install --skip-repo
 ```
 
+## 初始化仓库
+```shell
+echo "# crawler" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M 'main'
+git remote add origin git@github.com:dreamerjackson/crawler.git
+git push -u origin 'main'
+```
+
+
+
 ## 修改最近一次 commit 的 message
 git commit --amend：修改最近一次 commit 的 message
 
