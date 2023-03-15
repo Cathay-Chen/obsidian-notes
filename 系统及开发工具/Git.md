@@ -31,6 +31,9 @@ git push -u origin 'main'
 ```
 
 
+## 撤回commit操作，代码仍然保留
+git reset --soft HEAD^
+
 
 ## 修改最近一次 commit 的 message
 git commit --amend：修改最近一次 commit 的 message
