@@ -107,14 +107,32 @@ $ git clean -xdf
 
 ## 撤回commit
 
-git reset --soft HEAD^
+`git reset --soft HEAD^`
 这样就能成功的撤回你刚刚的commit操作。
 
 HEAD^的意思是上一个版本，也可以写成HEAD~1
 如果你进行了2次commit，想都撤回，可以使用HEAD~2
 注意，这个命令仅仅是撤回commit操作，写的代码仍然保留
 
-git commit --amend
+> 补充
+> – mixed
+> 意思是：不删除工作空间改动代码，撤销commit，并且撤销git add . 操作
+> 这个为默认参数，git reset --mixed HEAD^ 和 git reset HEAD^ 效果是一样的。
+> 
+> –soft
+> 不删除工作空间改动代码，撤销commit，不撤销git add .
+> 
+> –hard
+> 删除工作空间改动代码，撤销commit，撤销git add .
+> 注意完成这个操作后，会删除工作空间代码！！！恢复到上一次的commit状态。慎重！！！
+
+
+
+##  如果只是想修改注释，可以这样操作
+
+`git commit --amend`
+这个时候进入vim编辑，直接修改即可，修改完注释，退出vim编辑  
+:wq保存已编辑的注释，重新git push即可
 
 ## 撤销已经提交的代码
 
