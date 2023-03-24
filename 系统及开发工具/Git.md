@@ -1,20 +1,4 @@
-## 基本配置基本配置是指在计算机硬件上的一些设置和调整，以确保计算机能够正常运行并满足用户的需求。以下是一些常见的基本配置：
-
-1. 操作系统：计算机必须安装一个操作系统（如Windows、MacOS、Linux等），以便用户可以与计算机交互。
-
-2. CPU：中央处理器是计算机的大脑，负责处理所有指令和数据。通常，更快的CPU意味着更好的性能。
-
-3. 内存：内存用于存储正在运行的程序和数据。通常，更多的内存意味着计算机可以同时运行更多的程序。
-
-4. 存储设备：用于存储数据和文件，如硬盘驱动器、固态硬盘等。
-
-5. 显示器：显示器用于显示图像和文字。通常，较高分辨率和色彩深度意味着更好的显示效果。
-
-6. 输入设备：键盘、鼠标、触摸板等用于输入命令和数据。
-
-7. 网络连接：通过有线或无线网络连接到Internet或其他设备。
-
-8. 外部设备接口：USB、HDMI等接口用于连接外部设备，如打印机、扫描仪、音频设备等。
+## 基本配置
 ```shell
 $ git config --global user.name "cathay" # 用户名改成自己的
 $ git config --global user.email "cathaycchen@gmail.com" # 邮箱改成自己的
@@ -121,4 +105,58 @@ $ git clean -xdf
 ```
 
 
+## 撤回commit
 
+git reset --soft HEAD^
+这样就能成功的撤回你刚刚的commit操作。
+
+HEAD^的意思是上一个版本，也可以写成HEAD~1
+如果你进行了2次commit，想都撤回，可以使用HEAD~2
+注意，这个命令仅仅是撤回commit操作，写的代码仍然保留
+
+git commit --amend
+
+## 撤销已经提交的代码
+
+有时候我们会不小心提交了错误的代码，需要撤销已经提交的代码。这时候我们可以使用 git revert 命令。
+
+假设我们已经将一些错误的代码提交到了 master 分支，并且这些代码在后续的开发中可能会引起一些问题。现在我们需要将这个 commit 撤销掉，让代码回到之前的状态。
+
+1. 查看要撤销的 commit ID
+
+首先需要查看要撤销的 commit ID。可以使用 git log 命令查看历史记录：
+
+```
+$ git log --oneline
+874e7c3 (HEAD -> master) fix: fix some bugs
+f5d2a13 feat: add new feature
+b8d5c96 docs: update README.md
+```
+
+假设要撤销 commit ID 为 874e7c3 的提交。
+
+2. 执行 git revert 命令
+
+执行以下命令：
+
+```
+$ git revert 874e7c3
+```
+
+此时会打开一个编辑器，提示你输入本次撤销操作的说明。输入完说明之后保存并退出编辑器即可。
+
+3. 查看 git log
+
+执行 git log 命令，发现最新的 commit 记录是新添加的一个 commit 记录，它包含了刚才撤销操作所修改过的文件变更。
+
+```
+$ git log --oneline
+e308583 (HEAD -> master) Revert "fix: fix some bugs"
+874e7c3 fix: fix some bugs
+f5d2a13 feat: add new feature
+b8d5c96 docs: update README.md
+```
+
+至此，已经成功撤销了我们之前提交的错误代码。
+
+需要注意的是，git revert 命令并不会删除我们之前提交的错误代码，而是会将它们保留在历史记录中，并且新添加一个 commit 记录来撤销这些错误代码的变更。这样做可以避
