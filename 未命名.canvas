@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"91e03d66bb842215","x":-250,"y":-232,"width":250,"height":60,"color":"1","type":"text","text":"石坤"},
+		{"id":"cd61dcca23f3f528","x":-250,"y":-60,"width":250,"height":140,"type":"text","text":"石坤1"}
+	],
+	"edges":[
+		{"id":"6f139c3c53a51ff8","fromNode":"91e03d66bb842215","fromSide":"bottom","toNode":"cd61dcca23f3f528","toSide":"top"}
+	]
+}
